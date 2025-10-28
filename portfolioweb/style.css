@@ -1,0 +1,330 @@
+/* ========== BASE STYLES ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+:root {
+  --bg-color: #f4f4f4;
+  --text-color: #333;
+  --primary: #00bcd4;
+  --nav-bg: #222;
+  --footer-bg: #222;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --nav-bg: #1f1f1f;
+  --footer-bg: #1f1f1f;
+}
+
+/* ========== HEADER & NAV ========== */
+header {
+  background: var(--nav-bg);
+  color: #fff;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--primary);
+}
+
+/* ========== THEME TOGGLE BUTTON ========== */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.3s;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* ========== HOME SECTION ========== */
+.home {
+  text-align: center;
+  padding: 100px 20px;
+  background: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.photo-container {
+  display: inline-block;
+  position: relative;
+  animation: float 4s ease-in-out infinite;
+}
+
+.profile-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 5px solid var(--primary);
+  object-fit: cover;
+  box-shadow: 0 0 30px rgba(0, 188, 212, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 40px rgba(0, 188, 212, 0.5);
+}
+
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span{
+    position: relative;
+}
+
+.typing-text span::before{
+    content: "Software Developer";
+    color: #38bdf8;
+    animation: words 20s infinite;
+}
+
+.typing-text span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 3px solid #38bdf8;
+    }
+}
+
+@keyframes words{
+    0%, 20%{
+        content: "Web Developer";
+   
+    }
+    61%, 80%{
+        content: "Gamer";
+  
+    }
+}
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.home h2 {
+  margin-top: 25px;
+  font-size: 32px;
+}
+
+.home span {
+  color: var(--primary);
+}
+
+.home p {
+  margin-top: 10px;
+  color: #777;
+  font-size: 18px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 600px) {
+  .profile-photo {
+    width: 160px;
+    height: 160px;
+  }
+
+  .home h2 {
+    font-size: 24px;
+  }
+
+  .home p {
+    font-size: 16px;
+  }
+}
+
+
+/* ========== ABOUT & CONTACT SECTIONS ========== */
+.about, .contact {
+  padding: 60px 20px;
+  text-align: center;
+  background: var(--bg-color);
+}
+
+.about p {
+  width: 70%;
+  margin: 20px auto;
+  line-height: 1.6;
+}
+
+/* ========== GALLERY ========== */
+.gallery {
+  padding: 60px 20px;
+  background: var(--bg-color);
+  text-align: center;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.gallery-container img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.gallery-container img:hover {
+  transform: scale(1.05);
+}
+
+
+/* ========== LIGHTBOX ========== */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.lightbox-content {
+  display: block;
+  margin: auto;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 45px;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: var(--footer-bg);
+  color: #fff;
+}
+
+/* ========== SCROLL ANIMATIONS ========== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.social-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .social-links a {
+      color: #38bdf8;
+      font-size: 1.8rem;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #fbbf24;
+      transform: scale(1.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    .video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+}
+.video-container iframe,
+.video-container video {
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
