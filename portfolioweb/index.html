@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio Website</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>psychorl1ch</h1>
+        <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-toggle">🌙</button>
+    </nav>
+  </header>
+
+  <section id="home" class="home">
+    <div class="home-content">
+      <img src="kop.jpg" alt="Profile Photo" class="profile-photo" />
+      <h2>Hello, I'm <span>Klient Orlich B. Paypa</span></h2>
+      <h3 class="typing-text">I'm a <span></span></h3>
+       
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      I'm Klient Orlich B. Paypa, a 22 years-old student from Lapu-Lapu City College. I'm currently learning the fundamentals of programming and looking forward to building creative and useful projects as I grow my skills.
+Outside of school, I enjoy spending time playing mobile games, which sparked my curiosity about how apps and games are made. I also like playing ball games and staying active it helps me keep a good balance between screen time and real world fun.
+    </p>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <h2>Activities</h2>
+    <div class="gallery-container">
+      <img src="gallery1.jpg" alt="Gallery Photo 1" />
+      <img src="gallery2" alt="Gallery Photo 2" />
+      <img src="photo editing" alt="Gallery Photo 3" />
+      <img src="autobiography" alt="Gallery Photo 4" />
+      <img src="rule of thirds" alt="Gallery Photo 5" />
+      <img src="wonders of nature" alt="Gallery Photo 6" />
+    </div>
+  </section>
+   <div
+  style="
+          margin-top: 50px;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+        "
+    <class="video-container">
+  <h1 style="text-align: center">Videography</h1>
+        <video
+          width="700"
+          style="margin: auto; margin-top: 20px"
+          src="Documentary.mp4"
+          controls
+        ></video>
+        <video
+          width="700"
+          style="margin: auto; margin-top: 100px"
+          src="Solo Video.mp4"
+          controls
+        ></video>
+      </div>
+ <hr style="width: 1200px; margin: auto; margin-top: 50px" />
+    </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: paypa.klientorlich@llcc.edu.ph</p>
+    <p>Phone: 09948038285</p>
+    <div class="social-links">
+      <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+  </section>
+
+
+  <footer>
+    © 2025 Orlich Paypa | All Rights Reserved
+  </footer>
+  <script>
+    // Smooth scroll for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+   
+  </script>
+    <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" />
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
